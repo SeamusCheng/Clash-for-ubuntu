@@ -33,7 +33,9 @@ Linux系统上挂代理（高手可绕道～，不喜误喷谢谢）
 5.clash能够运行，并且可以访问google的前提是需要相应的.yaml文件，一般默认读取该位置：$HOME/.config/clash/config.yaml
 
   先直接复制clash订阅码用电脑浏览器打开下载config.yaml，并且修改allow lan 为true
+  
   电脑浏览器下载Country.mmdb
+  
   再利用nano命令或者vim命令，修改.yaml文件的内容，一般形式如下：
   
   ![image](https://user-images.githubusercontent.com/72930251/219657512-89c62543-3c8e-44ff-a544-c05a7629cbf5.png)
@@ -85,7 +87,9 @@ WantedBy=multi-user.target
 10.最后输入：
 
 sudo systemctl enable clash
+
 sudo systemctl start clash
+
 sudo systemctl status clash
 
 完成开机自启
