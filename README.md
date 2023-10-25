@@ -32,7 +32,9 @@ Linux系统上挂代理（高手可绕道～，不喜误喷谢谢）
   
 5.clash能够运行，并且可以访问google的前提是需要相应的.yaml文件，一般默认读取该位置：$HOME/.config/clash/config.yaml
 
-  利用gedit命令或者vim命令，修改.yaml文件的内容，一般形式如下：
+  先直接复制clash订阅码用电脑浏览器打开下载config.yaml，并且修改allow lan 为true
+  电脑浏览器下载Country.mmdb
+  再利用nano命令或者vim命令，修改.yaml文件的内容，一般形式如下：
   
   ![image](https://user-images.githubusercontent.com/72930251/219657512-89c62543-3c8e-44ff-a544-c05a7629cbf5.png)
   
@@ -56,7 +58,7 @@ Linux系统上挂代理（高手可绕道～，不喜误喷谢谢）
   
 9.开机自启动：
 
-在/etc/systemd/system下新建clash.service文件：sudo gedit /etc/systemd/system/clash.service，填入：
+在/etc/systemd/system下新建clash.service文件：sudo nano /etc/systemd/system/clash.service，填入：
 
 [Unit]
 
@@ -68,7 +70,7 @@ Documentation=https://github.com/Dreamacro/clash/wiki
 
 OOMScoreAdjust=-1000
 
-ExecStart=/usr/local/bin/clash -f /root/.config/clash/config.yaml
+ExecStart=/usr/local/bin/clash -f /home/mobian/.config/clash/config.yaml
 
 Restart=on-failure
 
